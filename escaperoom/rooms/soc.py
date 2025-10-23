@@ -4,10 +4,10 @@ from escaperoom.rooms.base import Room
 
 
 class SOCRoom(Room):
-    """Vault Corridor room."""
+    """SOC room."""
     
     def __init__(self):
-        super().__init__(name="Vault Corridor")
+        super().__init__(name="SOC room")
 
     def inspect(self, filepath, game_state):
         """Inspect the room's item and return output lines."""
