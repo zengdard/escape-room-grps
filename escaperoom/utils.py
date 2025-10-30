@@ -1,4 +1,4 @@
-"""Small helpers: IP checks, cfg parsing, HMAC verification, etc."""
+"""Utility functions for IP validation, config parsing, and HMAC operations."""
 
 import re
 import ipaddress

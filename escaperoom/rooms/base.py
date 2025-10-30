@@ -1,4 +1,4 @@
-"""Room ABC (shared interface)."""
+"""Abstract base class defining the room interface and common state."""
 
 from abc import ABC, abstractmethod
 

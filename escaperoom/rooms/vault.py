@@ -1,4 +1,4 @@
-"""Room 4: Vault Corridor."""
+"""Vault room logic: parse `vault_dump.txt` and locate SAFE{a-b-c} where a+b=c."""
 
 import re
 from escaperoom.rooms.base import Room

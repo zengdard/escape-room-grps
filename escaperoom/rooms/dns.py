@@ -1,5 +1,5 @@
 # utf-8
-""" DNS room."""
+"""DNS room logic: parse `dns.cfg`, normalize lines, and decode Base64 hints."""
 
 import re
 import base64

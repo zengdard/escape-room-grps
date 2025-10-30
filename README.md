@@ -110,7 +110,7 @@ Grading (as per assignment):
 - Correctness: 40% (all tokens collected, gate unlocks).
 - Design & Decomposition: 25% (modular classes/functions).
 - Demo & Defense: 25% (live run + Q&A).
-- Code Quality: 10% (docstrings, error handling, cleanliness).
+- Code and documentation quality (10%): naming, docstrings, README, error handling, PEP 8 cleanliness.
 
 For questions, contact the supervisor.
 

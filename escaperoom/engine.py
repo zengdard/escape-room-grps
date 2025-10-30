@@ -1,4 +1,4 @@
-"""REPL loop + GameState + command routing."""
+"""Game engine: REPL loop, command routing, and token/gate verification."""
 
 import json
 import os
@@ -6,7 +6,7 @@ from escaperoom.transcript import TranscriptLogger
 from escaperoom.rooms.soc import SOCRoom
 from escaperoom.rooms.dns import DNSRoom
 from escaperoom.rooms.vault import VaultRoom
-from escaperoom.rooms.malware import MalwareRoom
+from escaperoom.rooms.malware import ProcessTree
 from escaperoom.utils import verify_hmac, compute_hmac
 
 
@@ -36,7 +36,7 @@ class GameEngine:
             "soc": {"description": "SOC Triage Desk", "exits": ["intro", "dns", "vault", "malware", "final"], "items": ["auth.log"], "handler": SOCRoom()},
             "dns": {"description": "DNS Closet", "exits": ["intro", "soc", "vault", "malware", "final"], "items": ["dns.cfg"], "handler": DNSRoom()},
             "vault": {"description": "Vault Corridor", "exits": ["intro", "soc", "dns", "malware", "final"], "items": ["vault_dump.txt"], "handler": VaultRoom()},
-            "malware": {"description": "Malware Lab", "exits": ["intro", "soc", "dns", "vault", "final"], "items": ["proc_tree.jsonl"], "handler": MalwareRoom()},
+            "malware": {"description": "Malware Lab", "exits": ["intro", "soc", "dns", "vault", "final"], "items": ["proc_tree.jsonl"], "handler": ProcessTree()},
             "final": {"description": "Final Gate", "exits": ["intro", "soc", "dns", "vault", "malware"], "items": ["gate"]}
         }
     
@@ -160,8 +160,15 @@ class GameEngine:
             filepath = os.path.join(self.data_dir, item_name)
             result = handler.inspect(filepath, self.state)
             if result:
-                for line in result:
-                    self.output(line)
+                if isinstance(result, str):
+                    # Handle string results (e.g., SOC room)
+                    for line in result.split('\n'):
+                        if line.strip():
+                            self.output(line)
+                elif isinstance(result, list):
+                    # Handle list results (e.g., DNS, Vault, Malware rooms)
+                    for line in result:
+                        self.output(line)
     
     def use_item(self, item_name):
         """Use an item from inventory or in room."""

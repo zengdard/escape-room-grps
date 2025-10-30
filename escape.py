@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CLI entry point for the escape room game."""
+"""Entry point and argument parsing for the CLI REPL launcher."""
 
 import argparse
 from escaperoom.engine import GameEngine

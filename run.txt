@@ -4,3 +4,37 @@
 [2025-10-23 13:35:55] > look
 [2025-10-23 13:37:19] > quit
 [2025-10-23 13:37:19] [Game] Goodbye. Transcript written to run.txt
+[2025-10-29 16:09:37] [Game] Cyber Escape Room started. Type 'help' for commands.
+[2025-10-29 16:34:40] > move
+[2025-10-29 16:34:40] Move where?
+[2025-10-29 16:34:54] > move malware
+[2025-10-29 16:34:54] You enter the Malware Lab.
+[2025-10-29 16:34:54] Process trees sprawl across multiple screens.
+[2025-10-29 16:34:54] Items here: proc_tree.jsonl
+[2025-10-29 16:35:21] > inspect proc_tree.jsonl
+[2025-10-29 16:38:36] [Game] Cyber Escape Room started. Type 'help' for commands.
+[2025-10-29 16:38:41] > move malware
+[2025-10-29 16:38:41] You enter the Malware Lab.
+[2025-10-29 16:38:41] Process trees sprawl across multiple screens.
+[2025-10-29 16:38:41] Items here: proc_tree.jsonl
+[2025-10-29 16:38:51] > insprect proc_tree.jsonl
+[2025-10-29 16:38:51] Unknown command: insprect
+[2025-10-29 16:38:55] > inspect proc_tree.jsonl
+[2025-10-29 16:39:03] > exit
+[2025-10-29 16:39:03] [Game] Goodbye. Transcript written to run.txt
+[2025-10-29 16:54:31] [Game] Cyber Escape Room started. Type 'help' for commands.
+[2025-10-29 16:54:37] > move dns
+[2025-10-29 16:54:37] You enter the DNS Closet.
+[2025-10-29 16:54:37] The walls are covered with scribbled key=value pairs.
+[2025-10-29 16:54:37] Items here: dns.cfg
+[2025-10-29 16:54:44] > inspct  dns.cfg
+[2025-10-29 16:54:44] Unknown command: inspct
+[2025-10-29 16:54:48] > inspect  dns.cfg
+[2025-10-29 16:54:48] [Room DNS] Searching for DNS hints...
+[2025-10-29 16:54:48] Found valid DNS hint: token_tag=NA==
+[2025-10-29 16:54:48] TOKEN[DNS]=4
+[2025-10-29 16:54:48] EVIDENCE[DNS].MATCH="token_tag=NA=="
+[2025-10-29 16:54:48] EVIDENCE[DNS].CHECK=token_tag→decoded(4)
+[2025-10-29 16:54:52] [Game] Goodbye. Transcript written to run.txt
+[2025-10-29 16:55:42] [Game] Cyber Escape Room started. Type 'help' for commands.
+[2025-10-29 16:55:54] [Game] Goodbye. Transcript written to run.txt

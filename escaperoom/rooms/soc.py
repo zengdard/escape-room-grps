@@ -1,5 +1,5 @@
 #utf-8
-"""SOC room."""
+"""SOC room logic: scan `auth.log`, aggregate failures by /24, extract top IP."""
 from escaperoom.rooms.base import Room
 
 class SOCRoom(Room):
@@ -10,12 +10,11 @@ class SOCRoom(Room):
 
     def inspect(self, filepath, game_state):
         """Inspect the room's item and return output lines."""
-        output = ["[Room SOC] Inspecting the room..."]
         failwins = {}  # Our dictionary of failed attempts, it will have a sub dict for counts
         malformed_skipped = []  # our list of malformed lines that we've skipped
         log_entry_count = 0
 
-        with open("../../msc-group-03/auth.log", "r") as f:
+        with open(filepath, "r") as f:
             # this r flag is very handy as it allows us to itterate across the lines in a for loop!
             for line in f:
                 log_entry_count += 1

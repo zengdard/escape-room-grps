@@ -1,4 +1,4 @@
-"""Transcript logger (writes into run.txt)."""
+"""Transcript logger that writes timestamped game I/O into `run.txt`."""
 
 from datetime import datetime
 
